@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommender System</title>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: rgba(211,211,211, 0.9);
+        }
+        .card-img-top {
+            background-color: rgba(180,180,180, 0.9);
+            width: 100%;
+            height: 20vw;
+            object-fit: cover;
+        }
+        .card-body {
+            background-color: rgba(190,190,190, 0.9);
+            width: 100%;
+            height: 10vw;
+            object-fit: cover;
+        }
+        .form-control {
+            background-color: rgba(600, 300, 225, 0.9);
+            border-color: black !important;
+        }
+        .navbar-brand img {
+            border-radius: 70%;
+        }
+        .hero {
+            background-color: rgba(500, 300, 225, 0.8);
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: left;
+            justify-content: left;
+            text-align: left;
+            color: green;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://th.bing.com/th/id/OIP.jHtskLb4A9Q8W9ZOHN7kPgAAAA?pid=ImgDet&w=60&h=60&c=7&dpr=1.3&rs=1" alt="icon" height="45">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/" target="_blank">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/popular">Top 100 Books</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container" >
+    <section class="py-5 header text-center">
+    <h1 class="mt-4" style="padding-top: 30px;">Hey! Recommend a book for me</h1>
+    </section>
+        
+    </div>
+        
+    <!-- Image -->
+    <div class="text-center">
+    <img src="https://wallpaperaccess.com/full/124410.jpg" alt="books-img" height="300" border="0" >
+    </div>
+
+    <!-- Hero Section -->
+        <div class="container">
+            <form action="/recommend_books" method="post" class="mt-4">
+                <div class="input-group mb-3">
+                    <input name="user_input" type="text" class="form-control form-control-lg" placeholder="Enter a book title" aria-label="Enter a book title" aria-describedby="button-addon2">
+                    <button class="btn btn-lg btn-warning" type="submit" id="button-addon2">Get Recommendations</button>
+                </div>
+            </form>
+        </div>
+
+    <!-- Book Recommendations Section -->
+    <div class="container my-5">
+        <div class="row">
+            {% if data %}
+                {% for i in data %}
+                    <div class="col-md-3 mb-4">
+                        <div class="card shadow">
+                            <img class="card-img-top" src="{{ i[2] }}" alt="Book cover">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ i[0] }}</h5>
+                                <p class="card-text">Author: {{ i[1] }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommender System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: rgba(500, 250, 300, 0.8);
+        }
+        .hero {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .navbar-brand img {
+            border-radius: 50%;
+        }
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar-brand img {
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .navbar-brand .title {
+            font-size: 1.2rem;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+            <img src="https://th.bing.com/th/id/OIP.jHtskLb4A9Q8W9ZOHN7kPgAAAA?pid=ImgDet&w=60&h=60&c=7&dpr=1.3&rs=1" alt="icon" height="60">
+            <h3 class="title mb-0 ms-2">Book Recommendation System</h3>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/recommend">Recommend</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/popular">Top 100 Books</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav> 
+
+<header id="heroCarousel" class="carousel slide hero" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="static/img1.webp" class="d-block w-100" alt="Image 1">
+        </div>
+        <div class="carousel-item">
+            <img src="static/img2.webp" class="d-block w-100" alt="Image 2">
+        </div>
+        <div class="carousel-item">
+            <img src="static/img3.webp" class="d-block w-100" alt="Image 2">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</header>
+
+<main class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-4 text-center mb-4">
+            <div class="feature-icon">📚</div>
+            <h3 class="mt-3">Personalized Recommendations</h3>
+            <p class="mb-4">Get book suggestions tailored to your preference</p>
+        </div>
+        <div class="col-md-4 text-center mb-4">
+            <div class="feature-icon">🏆</div>
+            <h3 class="mt-3">Top 100 Books</h3>
+            <p class="mb-4">Explore our curated list of the most popular and highly-rated books.</p>
+        </div>
+    </div>
+</main>
+
+<footer class="bg-dark text-white text-center py-3">
+    <p>&copy; Book Recommender System. All rights are reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
